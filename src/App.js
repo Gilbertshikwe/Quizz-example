@@ -46,7 +46,7 @@ function App() {
       console.error('Error fetching questions:', error);
     }
   };
-
+  //Hunphrey code to be updated
   const handleNextQuestion = () => {
     setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
   };
@@ -56,7 +56,7 @@ function App() {
     const isCorrect = choice === currentQuestion.correctAnswer;
 
     // Update the score based on correctness (2 points for each correct answer)
-    setScore((prevScore) => (isCorrect ? prevScore + 2 : prevScore));
+    setScore((prevScore) => (isCorrect ? prevScore + 1 : prevScore));
 
     formik.handleChange({
       target: {

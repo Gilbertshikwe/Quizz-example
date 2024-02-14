@@ -48,23 +48,16 @@ function App() {
   };
 
   const handleNextQuestion = () => {
-    const currentQuestion = questions[currentQuestionIndex];
-    const selectedAnswer = formik.values.answers[currentQuestion.id];
-    const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
-  
-    // Update the score based on correctness
-    setScore((prevScore) => (isCorrect ? prevScore + 1 : prevScore));
-  
     setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
   };
   
   const handleAnswerSelected = (choice) => {
     const currentQuestion = questions[currentQuestionIndex];
     const isCorrect = choice === currentQuestion.correctAnswer;
-  
-    // Update the score based on correctness
-    setScore((prevScore) => (isCorrect ? prevScore + 1 : prevScore));
-  
+
+    // Update the score based on correctness (2 points for each correct answer)
+    setScore((prevScore) => (isCorrect ? prevScore + 2 : prevScore));
+
     formik.handleChange({
       target: {
         name: `answers.${currentQuestion.id}`,
@@ -72,7 +65,6 @@ function App() {
       },
     });
   };
-  
 
   const handlePrevQuestion = () => {
     setCurrentQuestionIndex((prevIndex) => prevIndex - 1);

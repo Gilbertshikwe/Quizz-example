@@ -85,20 +85,23 @@ function App() {
         <Navbar />
         <Routes>
         <Route
-          path="/questions"
-          element={
-            questions?.length > 0 ? (
-              <Question
-                questions={questions}
-                formik={formik}
-                currentQuestionIndex={currentQuestionIndex}
-                onNext={handleNextQuestion}
-                onPrev={handlePrevQuestion}
-                onAnswerSelected={handleAnswerSelected} 
-              />
-            ) : <p>No questions available.</p>
-          }
-        />
+  path="/questions"
+  element={
+    questions?.length > 0 ? (
+      <Question
+        questions={questions}
+        setQuestions={setQuestions} // Make sure to pass setQuestions as a prop
+        formik={formik}
+        currentQuestionIndex={currentQuestionIndex}
+        onNext={handleNextQuestion}
+        onPrev={handlePrevQuestion}
+        onAnswerSelected={handleAnswerSelected}
+      />
+    ) : (
+      <p>No questions available.</p>
+    )
+  }
+/>
 
           <Route path="/score" element={<Score score={score} />} />
           <Route path="/feedback" element={<Feedback />} />

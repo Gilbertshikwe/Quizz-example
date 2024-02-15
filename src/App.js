@@ -84,11 +84,12 @@ function App() {
       <div>
         <Navbar />
         <Routes>
+        <Route path="/about" element={<About />} />
         <Route
-  path="/questions"
-  element={
-    questions?.length > 0 ? (
-      <Question
+        path="/questions"
+        element={
+        questions?.length > 0 ? (
+        <Question
         questions={questions}
         setQuestions={setQuestions} // Make sure to pass setQuestions as a prop
         formik={formik}
@@ -105,7 +106,7 @@ function App() {
 
           <Route path="/score" element={<Score score={score} questions={questions} />} />
           <Route path="/feedback" element={<Feedback />} />
-          <Route path="/about" element={<About />} />
+         
           {/* Add a route for the root path if needed */}
           <Route path="/" element={<p>Welcome to the Quiz App!</p>} />
         </Routes>

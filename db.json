@@ -272,6 +272,22 @@
     {
       "feedback": "Interesting",
       "id": 6
+    },
+    {
+      "feedback": "Well done",
+      "id": 7
+    },
+    {
+      "feedback": "Keep up\n",
+      "id": 8
+    },
+    {
+      "feedback": "Keep going",
+      "id": 9
+    },
+    {
+      "feedback": "Need to work on some things.",
+      "id": 10
     }
   ]
 }

@@ -20,17 +20,21 @@ function Question({ questions, setQuestions, formik, currentQuestionIndex, onNex
 
   const handleAnswerSelected = (choice) => {
     const isCorrect = currentQuestion.correctAnswer === choice;
-
+  
     // Update the user's answer in the questions state
     setQuestions((prevQuestions) => {
       const updatedQuestions = [...prevQuestions];
-      updatedQuestions[currentQuestionIndex].userAnswer = choice;
-      updatedQuestions[currentQuestionIndex].isCorrect = isCorrect; // Add isCorrect flag
+      updatedQuestions[currentQuestionIndex] = {
+        ...updatedQuestions[currentQuestionIndex],
+        userAnswer: choice,
+        isCorrect: isCorrect,
+      };
       return updatedQuestions;
     });
-
+  
     onAnswerSelected(choice, isCorrect); // Call the onAnswerSelected prop with the selected choice and correctness
   };
+  
 
   const isAnswerCorrect = (choice) => {
     return currentQuestion.correctAnswer === choice;

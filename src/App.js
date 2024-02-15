@@ -103,7 +103,7 @@ function App() {
   }
 />
 
-          <Route path="/score" element={<Score score={score} />} />
+          <Route path="/score" element={<Score score={score} questions={questions} />} />
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/about" element={<About />} />
           {/* Add a route for the root path if needed */}

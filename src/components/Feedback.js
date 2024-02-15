@@ -53,9 +53,10 @@ function Feedback() {
     }, []); // Fetch comments when the component mounts
   
     return (
-      <div>
-        <h2>Feedback Form</h2>
-        <form onSubmit={formik.handleSubmit}>
+        <div className="feedback-container">
+        <div className="feedback-title">Feedback Form</div>
+        <form onSubmit={formik.handleSubmit} className="feedback-form">
+          <div>
           <label>
             Feedback:
             <textarea
@@ -64,17 +65,17 @@ function Feedback() {
               onChange={formik.handleChange}
             />
           </label>
-  
+          </div>
           <button type="submit">Submit Feedback</button>
         </form>
-  
-        <h3>Comments:</h3>
+        <div className="feedback-comments">
+        <h3>User's Experience:</h3>
         <ul>
            {comments.map((comment) => (
            <li key={comment.id}>{comment.feedback}</li>
             ))}
        </ul>
-
+        </div>
       </div>
     );
   }

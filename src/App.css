@@ -1,38 +1,323 @@
-.App {
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+h1 {
+  font-size: 2em;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar {
+  background-color: #1ba8bb;
+  padding: 1px;
+  text-align: center;
+  color: rgb(0, 255, 242);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  color: red;
+}
+
+.navbar li {
+  margin: 0 15px;
+  text-decoration: none;
+  color:white;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+
+}
+.navbar a {
+  text-decoration: none;
   color: white;
+  font-size: 20px;
+  font-weight: bold;
+  transition: color 0.3s ease; 
 }
 
-.App-link {
-  color: #61dafb;
+.navbar a:hover {
+  color: #1a1b1b; 
+}
+.logo {
+  overflow: hidden;
+  border-radius: 50%; 
+  width: 50px; 
+  height: 50px; 
+}
+.about-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.about-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.about-content {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.about-objectives {
+  margin-top: 20px;
+}
+
+.about-objectives h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.about-objectives p {
+  color: #555;
+}
+
+.about-started {
+  margin-top: 20px;
+}
+
+.about-started p {
+  color: #555;
+}
+
+.about-started a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.about-started a:hover {
+  text-decoration: underline;
+}
+.feedback-container {                                                                                                                                                                                                                                                                                                                                                                                                 
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.feedback-form {
+  margin-bottom: 20px;
+}
+
+.feedback-form label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.feedback-form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.feedback-form button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.feedback-form button:hover {
+  background-color: #2980b9;
+}
+
+.feedback-comments {
+  margin-top: 20px;
+}
+
+.feedback-comments h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.feedback-comments ul {
+  list-style: none;
+  padding: 0;
+}
+
+.feedback-comments li {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 8px;
+}
+.score-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.score-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.score-message {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.correct-answers,
+.incorrect-answers {
+  margin-top: 20px;
+}
+
+.correct-answers h3,
+.incorrect-answers h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.correct-answers p,
+.incorrect-answers p {
+  color: #555;
+}
+
+.correct-answers ul,
+.incorrect-answers ul {
+  list-style: none;
+  padding: 0;
+}
+
+.correct-answers li,
+.incorrect-answers li {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 8px;
+}
+.question-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.question-text {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.choices-container {
+  margin-top: 15px;
+}
+
+.choice-label {
+  display: block;
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.choice-input {
+  margin-right: 8px;
+}
+
+.feedback {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #555;
+}
+
+.navigation-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content:first baseline
+}
+
+.prev-button,
+.next-button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.prev-button:hover,
+.next-button:hover {
+  background-color: #2980b9;
+}
+
+.footer {
+  background-color: #1ba8bb;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.social-media a {
+  display: inline-block;
+  margin: 0 10px;
+  border-radius: 50%; /* Make the images round */
+  overflow: hidden;
+}
+
+.social-media a img {
+  width: 30px; /* Set the width of the images */
+  height: 30px; /* Set the height of the images */
+  border-radius: 50%; /* Make sure the images are fully round */
+  transition: transform 0.3s ease-in-out;
+}
+
+.social-media a:hover img {
+  transform: scale(1.2);
+}
+
+p {
+  margin: 0;
+  font-size: 14px;
 }

@@ -18,11 +18,11 @@ function Score({ score, questions }) {
   }
 
   return (
-    <div>
-      <h2>Your Score: {score}</h2>
-      <p>{message}</p>
+    <div className="score-container">
+      <div className="score-title">Your Score: {score}</div>
+      <div className="score-message">{message}</div>
 
-      <div>
+      <div className="correct-answers">
         <h3>Correct Answers:</h3>
         <p>{correctAnswers.length} out of {totalQuestions}</p>
         <ul>
@@ -32,14 +32,14 @@ function Score({ score, questions }) {
         </ul>
       </div>
 
-      <div>
+      <div className="incorrect-answers">
         <h3>Incorrect Answers:</h3>
         <p>{incorrectAnswers.length} out of {totalQuestions}</p>
-        <ul>
+        <ol>
           {incorrectAnswers.map((question) => (
             <li key={question.id}>{question.text}</li>
           ))}
-        </ul>
+        </ol>
       </div>
     </div>
   );

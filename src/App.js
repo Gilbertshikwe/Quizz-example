@@ -6,6 +6,8 @@ import Score from './components/Score';
 import Feedback from './components/Feedback';
 import About from './components/About';
 import { useFormik } from 'formik';
+import Footer from './components/Footer';
+import './App.css'; 
 
 function App() {
   const [questions, setQuestions] = useState([]);
@@ -110,6 +112,7 @@ function App() {
           {/* Add a route for the root path if needed */}
           <Route path="/" element={<p>Welcome to the Quiz App!</p>} />
         </Routes>
+        <Footer/>
       </div>
     </Router>
   );

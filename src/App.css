@@ -244,19 +244,27 @@ h1 {
 }
 
 .choices-container {
-  margin-top: 15px;
+  text-decoration: none;
+  list-style: none;
+  color: #2d264b;
+  font-size: 16px;
+  background: #f4f1f1;
+  border: 1px solid #afa8a8;
+  border-radius: 16px;
+  padding: 11px;
+  margin-top: 20px;
+  cursor: pointer;
 }
 
-.choice-label {
+.label-container {
   display: block;
-  font-size: 16px;
-  color: #555;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .choice-input {
-  margin-right: 8px;
+  margin-right: 10px;
 }
+
 
 .feedback {
   margin-top: 20px;

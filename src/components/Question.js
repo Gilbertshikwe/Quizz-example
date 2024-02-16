@@ -45,13 +45,15 @@ function Question({ questions, setQuestions, formik, currentQuestionIndex, onNex
     
     <div className="question-container">
     <form onSubmit={formik.handleSubmit}>
+    <div className="choices-list">
       <div key={currentQuestion.id}>
       <div className="question-text">{currentQuestion.text}</div>
         <div className="choices-container">
         {currentQuestion.choices.map((choice, index) => (
+        <div className="label-container">
           <label key={index}  className={isAnswerCorrect(choice) ? 'correct' : 'incorrect'}>
-            <div className="choice-label">
             <input
+              className="choice-input"
               type="radio"
               name={`answers.${currentQuestion.id}`}
               value={choice}
@@ -59,10 +61,11 @@ function Question({ questions, setQuestions, formik, currentQuestionIndex, onNex
               checked={formik.values.answers[currentQuestion.id] === choice}
               disabled={formik.values.answers[currentQuestion.id] !== undefined} // Disable if already answered
             />
-            </div>
             {choice}
           </label>
+          </div>
         ))}
+        </div>
         </div>
         {currentQuestion.isCorrect !== undefined && (
           <p className={currentQuestion.isCorrect ? 'correct-answer' : 'incorrect-answer'}>

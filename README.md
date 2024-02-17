@@ -1,9 +1,9 @@
 # QUIZ APPLICATION
 ## Authors
-1. Gibert Shikwe - ``
+1. Gibert Shikwe - `shikweg@gmail.com`
 2. Humphrey Ouma - `humphreyotieno04@gmail.com`
 3. Evelyn Kinya - `Evelynkinya156@gmail.com`
-4. Sharon Chepkemoi - ``
+4. Sharon Chepkemoi - `sharon.chepkemoi1@student.moringaschool.com`
 5. Esther Mutisya - `starjacob994@gmail.com`
 
 # Overview

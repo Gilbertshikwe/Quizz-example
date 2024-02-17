@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# QUIZ APPLICATION
+## Authors
+1. Gibert Shikwe - ``
+2. Humphrey Ouma - `humphreyotieno04@gmail.com`
+3. Evelyn Kinya - `Evelynkinya156@gmail.com`
+4. Sharon Chepkemoi - ``
+5. Esther Mutisya - `starjacob994@gmail.com`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Overview
+The Quiz Application is a React-based web application designed to provide users with an interactive quiz experience. Users can attempt quizzes, view their scores, and receive feedback on their performance.
 
-## Available Scripts
+## Features
+- Browse available quizzes and select one to attempt.
+- Answer quiz questions and submit responses.
+- Receive immediate feedback on correct and incorrect answers.
+- View overall score and performance summary after completing the quiz.
 
-In the project directory, you can run:
+## Introduction
+This React application utilizes the following technologies:
 
-### `npm start`
+- React
+- CSS
+- HTML
+- JavaScript
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## User Stories
+As a user, I can:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Browse available quizzes and select one to attempt.
+2. Answer quiz questions and submit responses.
+3. Receive immediate feedback on correct and incorrect answers.
+4. View overall score and performance summary after completing the quiz.
 
-### `npm test`
+## Usage
+### Cloning into your local machine
+1. Clone the repository into your local machine:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`https://github.com/Gilbertshikwe/Soma-Code-App.git`
 
-### `npm run build`
+2. Install Dependencies.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`cd Soma-Code-App`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`npm install`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Start the React App:
 
-### `npm run eject`
+`npm start`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. The application will be running on http://localhost:3000.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. Start the JSON server:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+`json-server db.json --port 4000`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+6. Two links for the resources will be provided to you upon execution of the command:
 
-## Learn More
+`http://localhost:4000/questions`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`http://localhost:4000/feedback`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Explore the Features
+1. Browse available quizzes and select one to attempt.
+2. Answer quiz questions and submit responses.
+3. Receive immediate feedback on correct and incorrect answers.
+4. View overall score and performance summary after completing the quiz.
+5. Provide your own feedback in the feedback section

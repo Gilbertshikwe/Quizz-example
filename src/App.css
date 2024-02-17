@@ -1,25 +1,38 @@
+@keyframes backgroundAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
+  color: #fff;
+  animation: backgroundAnimation 20s ease infinite;
+  background: linear-gradient(270deg, #4ecdc4, #88d8b0, #ff6b6b);
+  background-size: 400% 400%;
 }
 
 .container {
-  max-width: 50px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
 .header {
-  background-color: #ebf2f5;
+  background-color: #8e989c;
   color: #f5f3f3;
   padding: 10px;
   text-align: center;
 }
 
 .navbar {
-  background-color: #8aa3a8;
   padding: 10px 20px;
   display: flex;
   text-align: center;
@@ -63,13 +76,8 @@ body {
   margin: 10px;
 }
 
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
 .card {
-  background-color: #f6f1f1;
+  background-color: #ccc1c1;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -105,7 +113,7 @@ body {
 }
 
 .feedback-container {
-  background-color: #fff;
+  background-color: #858080;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -167,12 +175,11 @@ body {
 
 .feedback-comments li {
   font-size: 16px;
-  color: #555;
+  color: #ebdfdf;
   margin-bottom: 8px;
 }
 
 .score-container {
-  background-color: #fff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -222,7 +229,7 @@ body {
 }
 
 .question-container {
-  background-color: #fff;
+  background-color: #d8c7c7;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -236,18 +243,17 @@ body {
 }
 
 .choices-container {
-  text-decoration: none;
+  max-height: 200px;
+  overflow-y: auto;
   list-style: none;
   color: #2d264b;
   font-size: 16px;
-  background: #f4f1f1;
   border: 1px solid #afa8a8;
   border-radius: 16px;
   padding: 11px;
   margin-top: 20px;
   cursor: pointer;
 }
-
 .label-container {
   display: block;
   margin-bottom: 10px;
@@ -289,7 +295,6 @@ body {
 }
 
 .footer {
-  background-color: #8aa3a8;
   color: #fff;
   padding: 10px;
   text-align: center;

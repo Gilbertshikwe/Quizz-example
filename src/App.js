@@ -84,7 +84,7 @@ function App() {
                   questions={questions}
                   formik={formik}
                   currentQuestionIndex={currentQuestionIndex}
-                  setCurrentQuestionIndex={setCurrentQuestionIndex} // Pass setCurrentQuestionIndex as a prop
+                  setCurrentQuestionIndex={setCurrentQuestionIndex} 
                   score={score}
                   setScore={setScore}
                 />

@@ -258,44 +258,16 @@
       ],
       "correctAnswer": "break",
       "userAnswer": null
-    },
-    {
-      "feedback": "The quiz was good.",
-      "id": 21
     }
   ],
   "feedback": [
     {
-      "feedback": "Kijana good job",
+      "feedback": "Great job guys.It has helped me alot",
       "id": 4
     },
     {
-      "feedback": "Good Work!",
+      "feedback": "Interesting.",
       "id": 5
-    },
-    {
-      "feedback": "Interesting",
-      "id": 6
-    },
-    {
-      "feedback": "Well done",
-      "id": 7
-    },
-    {
-      "feedback": "Keep up\n",
-      "id": 8
-    },
-    {
-      "feedback": "Keep going",
-      "id": 9
-    },
-    {
-      "feedback": "Need to work on some things.",
-      "id": 10
-    },
-    {
-      "feedback": "Pull up your socks ",
-      "id": 11
     }
   ]
 }

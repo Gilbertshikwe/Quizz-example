@@ -209,7 +209,7 @@ body {
 }
 
 .correct-answers ul,
-.incorrect-answers ul {
+.incorrect-answers ol {
   list-style: none;
   padding: 0;
 }
@@ -324,3 +324,21 @@ p {
   font-size: 14px;
 }
 
+.submitted-feedback {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f8f8f8;
+  border-radius: 15px;
+}
+
+.submitted-feedback h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.submitted-feedback p {
+  font-size: 16px;
+  color: #555;
+}

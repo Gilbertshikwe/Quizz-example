@@ -1,11 +1,15 @@
 import React from 'react';
 
 function Score({ score, questions }) {
-  // Ensure questions is defined before filtering
-  const correctAnswers = (questions || []).filter((question) => question.correctAnswer === question.userAnswer);
-  const incorrectAnswers = (questions || []).filter((question) => question.correctAnswer !== question.userAnswer);
+  if (!questions || questions.length === 0) {
+    return <p>No questions available.</p>;
+  }
+  
+  const answeredQuestions = questions.filter(question => question.userAnswer !== null);
+  const correctAnswers = answeredQuestions.filter(question => question.correctAnswer === question.userAnswer);
+  const incorrectAnswers = answeredQuestions.filter(question => question.correctAnswer !== question.userAnswer);
 
-  const totalQuestions = questions ? questions.length : 0;
+  const totalQuestions = questions.length;
 
   let message = '';
 
@@ -46,5 +50,3 @@ function Score({ score, questions }) {
 }
 
 export default Score;
-
-

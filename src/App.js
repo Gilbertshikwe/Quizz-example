@@ -18,7 +18,6 @@ const shuffleArray = (array) => {
   return shuffledArray;
 };
 
-
 const sampleQuestions = (questions, count) => {
   const shuffledQuestions = shuffleArray(questions);
   return shuffledQuestions.slice(0, count);
@@ -34,7 +33,6 @@ function App() {
       answers: {},
     },
     onSubmit: () => {
-     
       const newScore = Object.values(formik.values.answers).reduce(
         (acc, answer) => (answer ? acc + 1 : acc),
         0
@@ -57,11 +55,8 @@ function App() {
         const data = await response.json();
         console.log('Fetched data:', data);
 
-        // Check if the fetched data is an array
         if (Array.isArray(data)) {
-          // Shuffle the questions array
           const shuffledQuestions = shuffleArray(data);
-          // Use the sampleQuestions function to select a random subset (e.g., 5 questions)
           const selectedQuestions = sampleQuestions(shuffledQuestions, 5);
           setQuestions(selectedQuestions);
         } else {
@@ -73,38 +68,8 @@ function App() {
     };
 
     fetchQuestions();
+  }, []);
 
-  }, []); // Empty dependency array since fetchQuestions does not depend on any variable outside its scope
-
-  const handleNextQuestion = () => {
-    // Increment the question index
-    setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
-  };
-
-  const handleAnswerSelected = (choice) => {
-    const currentQuestion = questions[currentQuestionIndex];
-    const isCorrect = choice === currentQuestion.correctAnswer;
-
-    // Update the score based on correctness (2 points for each correct answer)
-    setScore((prevScore) => (isCorrect ? prevScore + 1 : prevScore));
-
-    formik.handleChange({
-      target: {
-        name: `answers.${currentQuestion.id}`,
-        value: choice,
-      },
-    });
-  };
-
-  const handlePrevQuestion = () => {
-    // Decrement the question index
-    setCurrentQuestionIndex((prevIndex) => prevIndex - 1);
-  };
-
-  useEffect(() => {
-    console.log('Updated Questions:', questions);
-    console.log('Updated Formik Values:', formik.values);
-  }, [questions, formik.values]);
   return (
     <Router>
       <div>
@@ -117,23 +82,19 @@ function App() {
               questions?.length > 0 ? (
                 <Question
                   questions={questions}
-                  setQuestions={setQuestions} // Make sure to pass setQuestions as a prop
                   formik={formik}
                   currentQuestionIndex={currentQuestionIndex}
-                  onNext={handleNextQuestion}
-                  onPrev={handlePrevQuestion}
-                  onAnswerSelected={handleAnswerSelected}
+                  setCurrentQuestionIndex={setCurrentQuestionIndex} // Pass setCurrentQuestionIndex as a prop
+                  score={score}
+                  setScore={setScore}
                 />
               ) : (
                 <p>No questions available.</p>
               )
             }
           />
-
           <Route path="/score" element={<Score score={score} questions={questions} />} />
           <Route path="/feedback" element={<Feedback />} />
-
-          {/* Add a route for the root path if needed */}
           <Route path="/" element={<p>Welcome to the Quiz App!</p>} />
         </Routes>
         <Footer />

@@ -1,90 +1,81 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Navigate } from 'react-router-dom';
 
-
-function Question({ questions, setQuestions, formik, currentQuestionIndex, onNext, onPrev, onAnswerSelected }) {
-  if (!questions || questions.length === 0) {
-    // Render loading state or a message indicating that questions are being fetched
-    return <p>Loading questions...</p>;
-  }
+function Question({ questions, formik, currentQuestionIndex, setCurrentQuestionIndex, score, setScore }) {
+  const [allQuestionsAnswered, setAllQuestionsAnswered] = useState(false);
 
   const currentQuestion = questions[currentQuestionIndex];
 
-  const handleNext = () => {
-    onNext();
-    formik.resetForm();
+  const handleNextQuestion = () => {
+    setCurrentQuestionIndex(currentQuestionIndex + 1);
   };
 
-  const handlePrev = () => {
-    onPrev();
-    formik.resetForm();
+  const handlePrevQuestion = () => {
+    setCurrentQuestionIndex(currentQuestionIndex - 1);
   };
 
   const handleAnswerSelected = (choice) => {
-    const isCorrect = currentQuestion.correctAnswer === choice;
-  
-    // Update the user's answer in the questions state
-    setQuestions((prevQuestions) => {
-      const updatedQuestions = [...prevQuestions];
-      updatedQuestions[currentQuestionIndex] = {
-        ...updatedQuestions[currentQuestionIndex],
-        userAnswer: choice,
-        isCorrect: isCorrect,
-      };
-      return updatedQuestions;
+    formik.handleChange({
+      target: {
+        name: `answers.${currentQuestion.id}`,
+        value: choice,
+      },
     });
-  
-    onAnswerSelected(choice, isCorrect); // Call the onAnswerSelected prop with the selected choice and correctness
   };
-  
 
-  const isAnswerCorrect = (choice) => {
-    return currentQuestion.correctAnswer === choice;
+  const handleSubmitQuiz = () => {
+    const allAnswered = questions.every(question => formik.values.answers[question.id]);
+    if (allAnswered) {
+      const newScore = questions.reduce((totalScore, question) => {
+        const selectedAnswer = formik.values.answers[question.id];
+        return selectedAnswer === question.correctAnswer ? totalScore + 1 : totalScore;
+      }, 0);
+      setScore(newScore);
+      setAllQuestionsAnswered(true);
+    } else {
+      alert('Please answer all questions before submitting.');
+    }
   };
+
+  if (allQuestionsAnswered) {
+    return <Navigate to="/score" />;
+  }
 
   return (
-    
-    <div className="question-container">
-    <form onSubmit={formik.handleSubmit}>
-    <div className="choices-list">
-      <div key={currentQuestion.id}>
-      <div className="question-text">{currentQuestion.text}</div>
-        <div className="choices-container">
+    <div className='quiz-container'>
+      <h2 className='question-heading'>Question {currentQuestionIndex + 1}</h2>
+      <p className='question-text'>{currentQuestion.text}</p>
+      <div className='choices-container'>
         {currentQuestion.choices.map((choice, index) => (
-        <div className="label-container">
-          <label key={index}  className={isAnswerCorrect(choice) ? 'correct' : 'incorrect'}>
+          <label className='label-container' key={index}>
             <input
-              className="choice-input"
+              className='choice-input'
               type="radio"
               name={`answers.${currentQuestion.id}`}
               value={choice}
               onChange={() => handleAnswerSelected(choice)}
               checked={formik.values.answers[currentQuestion.id] === choice}
-              disabled={formik.values.answers[currentQuestion.id] !== undefined} // Disable if already answered
             />
             {choice}
           </label>
-          </div>
         ))}
-        </div>
-        </div>
-        {currentQuestion.isCorrect !== undefined && (
-          <p className={currentQuestion.isCorrect ? 'correct-answer' : 'incorrect-answer'}>
-            {currentQuestion.isCorrect ? 'Correct!' : 'Incorrect!'} The correct answer is: {currentQuestion.correctAnswer}
-          </p>
+      </div>
+      <div className='action-buttons'>
+        <button className='prev-button' type="button" onClick={handlePrevQuestion} disabled={currentQuestionIndex === 0}>
+          Previous
+        </button>
+        {currentQuestionIndex === questions.length - 1 ? (
+          <button className='submit-button' type="button" onClick={handleSubmitQuiz}>
+            Submit Quiz
+          </button>
+        ) : (
+          <button className='next-button' type="button" onClick={handleNextQuestion}>
+            Next
+          </button>
         )}
       </div>
-      <div className="navigation-buttons">
-      <button type="button" onClick={handlePrev} className="prev-button" disabled={currentQuestionIndex === 0}>
-        Previous
-      </button>
-      <button type="button" onClick={handleNext}  className="next-button" disabled={currentQuestionIndex === questions.length - 1}>
-        Next
-      </button>
-      </div>
-    </form>
     </div>
   );
 }
 
 export default Question;
-
